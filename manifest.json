@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Move Live Chat",
+    "version": "0.0.1",
+    "description": "Allows the user to move the chat box of YouTube live streams.",
+    "homepage_url": "",
+    "icons": {
+        "48": "",
+        "96": ""
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ]
+        }
+    ],
+    "web_accessible_resources": [],
+    "action": {
+        "default_icon": "icons/wolf.svg",
+        "default_title": "Beastify",
+        "default_popup": "popup/choose_beast.html"
+    }
+}
