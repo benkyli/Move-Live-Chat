@@ -1,1 +1,2 @@
-document.body.style.border = "20px solid blue";
+// Get chat box
+const chatbox = document.getElementById("chat-messages");

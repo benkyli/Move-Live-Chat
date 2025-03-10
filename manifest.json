@@ -8,20 +8,13 @@
         "48": "",
         "96": ""
     },
+    "host_permissions": [
+        "*://*.youtube.com/*"
+    ],
     "permissions": [
         "activeTab"
     ],
-    "content_scripts": [
-        {
-            "matches": [
-                "*://*.youtube.com/*"
-            ]
-        }
-    ],
+    "content_scripts": [],
     "web_accessible_resources": [],
-    "action": {
-        "default_icon": "icons/wolf.svg",
-        "default_title": "Beastify",
-        "default_popup": "popup/choose_beast.html"
-    }
+    "action": {}
 }
