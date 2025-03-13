@@ -3,18 +3,14 @@
     "name": "Move Live Chat",
     "version": "0.0.1",
     "description": "Allows the user to move the chat box of YouTube live streams.",
-    "homepage_url": "",
-    "icons": {
-        "48": "",
-        "96": ""
-    },
-    "host_permissions": [
-        "*://*.youtube.com/*"
-    ],
+    "homepage_url": "https://github.com/benkyli/Move-Live-Chat",
     "permissions": [
         "activeTab"
     ],
-    "content_scripts": [],
-    "web_accessible_resources": [],
-    "action": {}
+    "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/watch*"],
+            "js": ["app.js"]
+        }
+    ]
 }
