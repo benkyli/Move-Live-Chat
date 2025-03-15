@@ -1,21 +1,24 @@
-// Get chat box
+function getElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            resolve(document.querySelector(selector));
+        }
 
-function getchat() {
-    return document.getElementById('chat-container');
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                observer.disconnect();
+                resolve(document.querySelector(selector));
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
 }
 
-if (document.readyState == 'complete') {
-    console.log('loaded');
-    setTimeout(() => {
-        var chat = getchat();
-    console.log(chat);
-    },5000)
-} 
-
-
-    
-
-
-
-// Try seeing if an on click works for chat retrieval; may just not be loaded on tab opening
-// If not, perhaps it's an iframe fuckery. 
+// print chat
+getElm('#chat-container').then((elm) => {
+    console.log(elm);
+})
